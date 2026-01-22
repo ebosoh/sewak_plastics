@@ -366,12 +366,11 @@ footer {
 /* Hero Section */
 .hero-section {
     position: relative;
-    height: 90vh;
-    min-height: 700px;
+    padding-top: calc(var(--header-height) + 2rem);
+    padding-bottom: 4rem;
+    min-height: 85vh;
     display: flex;
     align-items: center;
-    overflow: hidden;
-    padding-top: var(--header-height);
 }
 
 .hero-bg {
@@ -384,10 +383,17 @@ footer {
     background: linear-gradient(135deg, #f3f4f6 0%, #e0e7ff 100%);
 }
 
+.hero-grid-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
 .hero-content {
     position: relative;
     z-index: 2;
-    max-width: 550px;
+    /* max-width handled by grid */
 }
 
 .hero-badge {
@@ -429,13 +435,9 @@ footer {
 
 /* Hero Visual (Right Side) */
 .hero-visual {
-    position: absolute;
-    right: -5%;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 50%;
-    height: 80%;
-    /* background: url('assets/images/tank-hero-placeholder.png') no-repeat center center; */
+    position: relative;
+    width: 100%;
+    height: 500px;
     background-size: contain;
     z-index: 1;
     background-color: rgba(255, 255, 255, 0.2);
@@ -445,6 +447,10 @@ footer {
     justify-content: center;
     align-items: center;
     border: 1px solid rgba(255, 255, 255, 0.4);
+    transform: none;
+    /* Reset absolute positioning transform */
+    top: auto;
+    right: auto;
 }
 
 .hero-visual::after {
@@ -457,21 +463,24 @@ footer {
 }
 
 @media (max-width: 992px) {
+    .hero-grid-layout {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
     .hero-title {
         font-size: 2.5rem;
     }
 
     .hero-visual {
-        display: none;
-    }
-
-    .hero-section {
-        text-align: center;
-        justify-content: center;
+        display: flex;
+        height: 350px;
+        margin-top: 2rem;
     }
 
     .hero-content {
         margin: 0 auto;
+        max-width: 600px;
     }
 
     .hero-cta-group {
