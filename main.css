@@ -147,6 +147,36 @@ img {
     box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
 }
 
+/* USP Icons & Framing */
+.usp-item {
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: var(--radius-md);
+    padding: 2rem 1rem;
+    transition: all 0.3s ease;
+    background-color: #FAFAFA;
+}
+
+.usp-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border-color: var(--color-blue-light);
+}
+
+.usp-icon {
+    height: 180px;
+    width: auto;
+    margin-bottom: 1.5rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.usp-icon:hover {
+    transform: scale(1.05);
+}
+
 /* Header & Nav */
 header {
     position: fixed;
@@ -434,32 +464,80 @@ footer {
 }
 
 /* Hero Visual (Right Side) */
+/* Hero Visual (Right Side) & Carousel */
 .hero-visual {
     position: relative;
     width: 100%;
     height: 500px;
-    background-size: contain;
     z-index: 1;
-    background-color: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(5px);
     border-radius: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    transform: none;
-    /* Reset absolute positioning transform */
-    top: auto;
-    right: auto;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
-.hero-visual::after {
-    content: 'Tank 3D Visual \A (Coming Soon)';
-    white-space: pre;
-    text-align: center;
-    color: var(--color-blue-corporate);
-    font-weight: 700;
-    opacity: 0.5;
+.hero-carousel {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.carousel-slide {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    background-size: cover;
+    background-position: center;
+    background-color: #e5e7eb;
+    /* Fallback color */
+}
+
+.carousel-slide.active {
+    opacity: 1;
+}
+
+/* Optional: Add a subtle zoom effect on active slide */
+.carousel-slide.active {
+    animation: zoomEffect 6s infinite alternate;
+}
+
+@keyframes zoomEffect {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.05);
+    }
+}
+
+
+
+.carousel-indicators {
+    position: absolute;
+    bottom: 1.5rem;
+    right: 2rem;
+    display: flex;
+    gap: 0.5rem;
+    z-index: 2;
+}
+
+.carousel-indicators .dot {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.carousel-indicators .dot.active {
+    background-color: var(--color-blue-corporate);
+    transform: scale(1.2);
 }
 
 @media (max-width: 992px) {
