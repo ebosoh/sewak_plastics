@@ -658,3 +658,106 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+
+/* Responsive Grid Utilities (New) */
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+/* Mobile Media Query Updates */
+@media (max-width: 992px) {
+    .grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* Global Container Padding */
+    .container {
+        padding: 0 1.25rem;
+    }
+
+    .section-padding {
+        padding: 3rem 0;
+    }
+
+    /* Collapse Grids to Single Column */
+    .grid-2,
+    .grid-3,
+    .grid-4 {
+        grid-template-columns: 1fr !important;
+        gap: 2rem;
+    }
+
+    /* Typography Scaling */
+    h1,
+    .hero-title {
+        font-size: 2.25rem !important;
+    }
+
+    h2,
+    .section-title {
+        font-size: 1.75rem !important;
+    }
+
+    h3 {
+        font-size: 1.5rem !important;
+    }
+
+    /* Hero Section Adjustments */
+    .hero-section {
+        padding-top: calc(var(--header-height) + 1rem);
+        /* Reduced padding */
+        min-height: auto;
+        text-align: center;
+    }
+
+    .hero-grid-layout {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .hero-visual {
+        height: 300px;
+        order: -1;
+        /* Show image first on mobile? Optional */
+        margin-bottom: 2rem;
+    }
+
+    .hero-content {
+        order: 1;
+    }
+
+    /* Glass Card Adjustments */
+    .glass-card,
+    .glass-panel {
+        padding: 1.5rem !important;
+        /* Reduced padding on cards */
+    }
+
+    /* Contact Page Specifics */
+    .contact-info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Footer Stack */
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        text-align: center;
+    }
+
+    .footer-col {
+        align-items: center;
+    }
+}
