@@ -133,29 +133,31 @@
                     <div>
                         <div class="glass-card" style="padding: 2.5rem;">
                             <h3 style="margin-bottom: 1.5rem;">Send a Request</h3>
-                            <form action="mailto:sales@sewakltd.com" method="post" enctype="text/plain">
+                            <form action="https://formspree.io/f/xeegnddo" method="POST">
                                 <div style="margin-bottom: 1.5rem;">
                                     <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Full
                                         Name</label>
-                                    <div class="glass-input" placeholder="John Kamau">
-                                    </div>
+                                    <input type="text" class="glass-input" placeholder="John Kamau" name="fullName"
+                                        required>
                                     <div class="grid-2" style="gap: 1.5rem; margin-bottom: 1.5rem;">
                                         <div>
                                             <label
                                                 style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Phone</label>
-                                            <input type="tel" class="glass-input" placeholder="07...">
+                                            <input type="tel" class="glass-input" placeholder="07..." name="phone"
+                                                required>
                                         </div>
                                         <div>
                                             <label
                                                 style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Email
                                                 (Optional)</label>
-                                            <input type="email" class="glass-input" placeholder="you@example.com">
+                                            <input type="email" class="glass-input" placeholder="you@example.com"
+                                                name="email">
                                         </div>
                                     </div>
                                     <div style="margin-bottom: 1.5rem;">
                                         <label
                                             style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Subject</label>
-                                        <select class="glass-input">
+                                        <select class="glass-input" name="subject">
                                             <option>Request for Quote</option>
                                             <option>Become a Distributor</option>
                                             <option>Warranty Claim</option>
@@ -166,7 +168,8 @@
                                         <label
                                             style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Message</label>
                                         <textarea class="glass-input" rows="4"
-                                            placeholder="I am interested in a 5,000L tank delivered to..."></textarea>
+                                            placeholder="I am interested in a 5,000L tank delivered to..."
+                                            name="message" required></textarea>
                                     </div>
                                     <button type="submit" class="btn btn-primary" style="width: 100%;">Send
                                         Message</button>
