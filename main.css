@@ -216,8 +216,8 @@ header {
 }
 
 .logo img {
-    mix-blend-mode: multiply;
-    filter: brightness(1.05) contrast(1.2);
+    /* Transparent logo, no blend mode needed */
+    display: block;
 }
 
 
