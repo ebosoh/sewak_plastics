@@ -23,6 +23,12 @@
     --color-green-eco: #059669;
     /* Sustainability */
 
+    --color-facebook: #1877F2;
+    --color-tiktok: #010101;
+    --color-instagram: #E4405F;
+    --color-youtube: #FF0000;
+    --color-linkedin: #0A66C2;
+
     --color-text-main: #1F2937;
     --color-text-muted: #6B7280;
     --color-white: #FFFFFF;
@@ -302,6 +308,50 @@ footer {
     font-size: 0.875rem;
     opacity: 0.6;
 }
+
+/* Social Media Icons Styling */
+.social-links {
+    display: flex;
+    gap: 1.25rem;
+    margin-top: 1rem;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    color: var(--color-white);
+}
+
+.social-icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+.social-icon:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.social-icon.facebook:hover { background-color: var(--color-facebook); }
+.social-icon.tiktok:hover { background-color: var(--color-tiktok); }
+.social-icon.instagram:hover { background-color: var(--color-instagram); }
+.social-icon.youtube:hover { background-color: var(--color-youtube); }
+.social-icon.linkedin:hover { background-color: var(--color-linkedin); }
+
+/* Static Branding (if needed) */
+.social-icon.facebook { color: var(--color-facebook); background: rgba(24, 119, 242, 0.15); }
+.social-icon.tiktok { color: var(--color-white); background: rgba(0, 0, 0, 0.3); }
+.social-icon.instagram { color: var(--color-instagram); background: rgba(228, 64, 95, 0.15); }
+.social-icon.youtube { color: var(--color-youtube); background: rgba(255, 0, 0, 0.15); }
+.social-icon.linkedin { color: var(--color-linkedin); background: rgba(10, 102, 194, 0.15); }
+
+.social-icon:hover { color: white !important; }
 
 /* Floating WhatsApp */
 .floating-whatsapp {
